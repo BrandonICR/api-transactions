@@ -1,0 +1,47 @@
+[
+    {
+        "id": 2,
+        "codigo_transaccion": "ctr2",
+        "moneda": "MXN",
+        "monto": 4000,
+        "emisor": "Bancomer",
+        "receptor": "Pedrito",
+        "fecha_transaccion": "04/04/2022"
+    },
+    {
+        "id": 3,
+        "codigo_transaccion": "ct3",
+        "moneda": "MXN",
+        "monto": 500,
+        "emisor": "Bancomer",
+        "receptor": "Pablo",
+        "fecha_transaccion": "01/04/2022"
+    },
+    {
+        "id": 4,
+        "codigo_transaccion": "ct4",
+        "moneda": "MXN",
+        "monto": 790,
+        "emisor": "Banamex",
+        "receptor": "Paco",
+        "fecha_transaccion": "12/04/2022"
+    },
+    {
+        "id": 5,
+        "codigo_transaccion": "ctr5",
+        "moneda": "MXN",
+        "monto": 800,
+        "emisor": "Banregio",
+        "receptor": "Lestat",
+        "fecha_transaccion": "20/04/2022"
+    },
+    {
+        "id": 6,
+        "codigo_transaccion": "ctr",
+        "moneda": "MXN",
+        "monto": 230,
+        "emisor": "Banregio",
+        "receptor": "Lestat",
+        "fecha_transaccion": "20/04/2022"
+    }
+]

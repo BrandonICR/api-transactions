@@ -1,0 +1,215 @@
+definitions:
+  handler.patchRequest:
+    properties:
+      codigo_transaccion:
+        type: string
+      monto:
+        type: number
+    type: object
+  handler.request:
+    properties:
+      codigo_transaccion:
+        type: string
+      emisor:
+        type: string
+      fecha_transaccion:
+        type: string
+      id:
+        type: integer
+      moneda:
+        type: string
+      monto:
+        type: number
+      receptor:
+        type: string
+    type: object
+info:
+  contact:
+    name: Transactions Team
+    url: https://someurl.com/support
+  description: This API Handle Transactions
+  title: Transaction Management API
+  version: "1.0"
+paths:
+  /transacciones:
+    get:
+      consumes:
+      - application/json
+      description: Get  alltransactions
+      parameters:
+      - description: authorization
+        in: header
+        name: authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Get all transactions
+      tags:
+      - Transaction
+    post:
+      consumes:
+      - application/json
+      description: Store a specific transaction using the body
+      parameters:
+      - description: authorization
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: transaction
+        in: body
+        name: transaction
+        required: true
+        schema:
+          $ref: '#/definitions/handler.request'
+      produces:
+      - application/json
+      responses: {}
+      summary: Store transaction
+      tags:
+      - Transaction
+  /transacciones/:
+    get:
+      consumes:
+      - application/json
+      description: Get transaction using a filter
+      parameters:
+      - description: authorization
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: id
+        in: query
+        name: id
+        type: integer
+      - description: codigo_transaccion
+        in: query
+        name: codigo_transaccion
+        type: string
+      - description: moneda
+        in: query
+        name: moneda
+        type: string
+      - description: monto
+        in: query
+        name: monto
+        type: number
+      - description: emisor
+        in: query
+        name: emisor
+        type: string
+      - description: receptor
+        in: query
+        name: receptor
+        type: string
+      - description: fecha_transaccion
+        in: query
+        name: fecha_transaccion
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Get transaction using a filter
+      tags:
+      - Transaction
+  /transacciones/{Id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete an specific transaction using the id
+      parameters:
+      - description: authorization
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: Id
+        in: path
+        name: Id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses: {}
+      summary: Delete transaction
+      tags:
+      - Transaction
+    get:
+      consumes:
+      - application/json
+      description: Get a specific transaction using the id
+      parameters:
+      - description: authorization
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: Id
+        in: path
+        name: Id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses: {}
+      summary: Get transaction
+      tags:
+      - Transaction
+    patch:
+      consumes:
+      - application/json
+      description: Patch an specific transaction using the id and body
+      parameters:
+      - description: authorization
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: Id
+        in: path
+        name: Id
+        required: true
+        type: integer
+      - description: transaction
+        in: body
+        name: transaction
+        required: true
+        schema:
+          $ref: '#/definitions/handler.patchRequest'
+      produces:
+      - application/json
+      responses: {}
+      summary: Patch transaction
+      tags:
+      - Transaction
+    put:
+      consumes:
+      - application/json
+      description: Update a specific transaction using the id and body
+      parameters:
+      - description: authorization
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: Id
+        in: path
+        name: Id
+        required: true
+        type: integer
+      - description: transaction
+        in: body
+        name: transaction
+        required: true
+        schema:
+          $ref: '#/definitions/handler.request'
+      produces:
+      - application/json
+      responses: {}
+      summary: Update transaction
+      tags:
+      - Transaction
+swagger: "2.0"

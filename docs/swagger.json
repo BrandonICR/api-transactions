@@ -1,0 +1,317 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This API Handle Transactions",
+        "title": "Transaction Management API",
+        "contact": {
+            "name": "Transactions Team",
+            "url": "https://someurl.com/support"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/transacciones": {
+            "get": {
+                "description": "Get  alltransactions",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Get all transactions",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "authorization",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            },
+            "post": {
+                "description": "Store a specific transaction using the body",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Store transaction",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "authorization",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "transaction",
+                        "name": "transaction",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handler.request"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/transacciones/": {
+            "get": {
+                "description": "Get transaction using a filter",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Get transaction using a filter",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "authorization",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "codigo_transaccion",
+                        "name": "codigo_transaccion",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "moneda",
+                        "name": "moneda",
+                        "in": "query"
+                    },
+                    {
+                        "type": "number",
+                        "description": "monto",
+                        "name": "monto",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "emisor",
+                        "name": "emisor",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "receptor",
+                        "name": "receptor",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "fecha_transaccion",
+                        "name": "fecha_transaccion",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/transacciones/{Id}": {
+            "get": {
+                "description": "Get a specific transaction using the id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Get transaction",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "authorization",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Id",
+                        "name": "Id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            },
+            "put": {
+                "description": "Update a specific transaction using the id and body",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Update transaction",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "authorization",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Id",
+                        "name": "Id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "transaction",
+                        "name": "transaction",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handler.request"
+                        }
+                    }
+                ],
+                "responses": {}
+            },
+            "delete": {
+                "description": "Delete an specific transaction using the id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Delete transaction",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "authorization",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Id",
+                        "name": "Id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            },
+            "patch": {
+                "description": "Patch an specific transaction using the id and body",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Patch transaction",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "authorization",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Id",
+                        "name": "Id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "transaction",
+                        "name": "transaction",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/handler.patchRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "handler.patchRequest": {
+            "type": "object",
+            "properties": {
+                "codigo_transaccion": {
+                    "type": "string"
+                },
+                "monto": {
+                    "type": "number"
+                }
+            }
+        },
+        "handler.request": {
+            "type": "object",
+            "properties": {
+                "codigo_transaccion": {
+                    "type": "string"
+                },
+                "emisor": {
+                    "type": "string"
+                },
+                "fecha_transaccion": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "moneda": {
+                    "type": "string"
+                },
+                "monto": {
+                    "type": "number"
+                },
+                "receptor": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
